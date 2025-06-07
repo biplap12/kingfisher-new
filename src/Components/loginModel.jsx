@@ -62,59 +62,59 @@ const EnquiryModal = ({ onClose }) => {
     });
   };
 
-  const handleCountryChange = (opt) => {
-    setSelectedCountry(opt);
-    setPhone(opt.raw.dial);
-  };
+  // const handleCountryChange = (opt) => {
+  //   setSelectedCountry(opt);
+  //   setPhone(opt.raw.dial);
+  // };
 
-  const countryOptions = countries.map((c) => ({
-    value: c.code,
-    label: (
-      <div className="flex items-center gap-2 text-sm">
-        <img src={`https://flagcdn.com/24x18/${c.code.toLowerCase()}.png`} alt="flag" className="w-4 h-3 object-cover" />
-        <span>{c.name}</span>
-        <span className="text-gray-400 text-xs ml-1">({c.dial})</span>
-      </div>
-    ),
-    singleLabel: (
-      <div className="flex items-center gap-2 text-sm">
-        <img src={`https://flagcdn.com/24x18/${c.code.toLowerCase()}.png`} alt="flag" className="w-6 h-4 object-cover" />
-        <span className="font-semibold">{c.iso3}</span>
-      </div>
-    ),
-    raw: c,
-  }));
+  // const countryOptions = countries.map((c) => ({
+  //   value: c.code,
+  //   label: (
+  //     <div className="flex items-center gap-2 text-sm">
+  //       <img src={`https://flagcdn.com/24x18/${c.code.toLowerCase()}.png`} alt="flag" className="w-4 h-3 object-cover" />
+  //       <span>{c.name}</span>
+  //       <span className="text-gray-400 text-xs ml-1">({c.dial})</span>
+  //     </div>
+  //   ),
+  //   singleLabel: (
+  //     <div className="flex items-center gap-2 text-sm">
+  //       <img src={`https://flagcdn.com/24x18/${c.code.toLowerCase()}.png`} alt="flag" className="w-6 h-4 object-cover" />
+  //       <span className="font-semibold">{c.iso3}</span>
+  //     </div>
+  //   ),
+  //   raw: c,
+  // }));
 
-  const customStyles = {
-    control: (base) => ({
-      ...base,
-      borderRadius: '0.75rem',
-      padding: '1px',
-      minHeight: '2rem',
-      fontSize: '0.75rem',
-      backgroundColor: '#fff',
-    }),
-    menu: (base) => ({
-      ...base,
-      fontSize: '0.75rem',
-      zIndex: 9999,
-    }),
-    option: (base, state) => ({
-      ...base,
-      padding: '4px 8px',
-      fontSize: '0.75rem',
-      backgroundColor: state.isFocused ? '#f0f0f0' : '#fff',
-      display: 'flex',
-      alignItems: 'center',
-      gap: '6px',
-    }),
-    singleValue: (base) => ({
-      ...base,
-      display: 'flex',
-      alignItems: 'center',
-      gap: '0.5rem',
-    }),
-  };
+  // const customStyles = {
+  //   control: (base) => ({
+  //     ...base,
+  //     borderRadius: '0.75rem',
+  //     padding: '1px',
+  //     minHeight: '2rem',
+  //     fontSize: '0.75rem',
+  //     backgroundColor: '#fff',
+  //   }),
+  //   menu: (base) => ({
+  //     ...base,
+  //     fontSize: '0.75rem',
+  //     zIndex: 9999,
+  //   }),
+  //   option: (base, state) => ({
+  //     ...base,
+  //     padding: '4px 8px',
+  //     fontSize: '0.75rem',
+  //     backgroundColor: state.isFocused ? '#f0f0f0' : '#fff',
+  //     display: 'flex',
+  //     alignItems: 'center',
+  //     gap: '6px',
+  //   }),
+  //   singleValue: (base) => ({
+  //     ...base,
+  //     display: 'flex',
+  //     alignItems: 'center',
+  //     gap: '0.5rem',
+  //   }),
+  // };
 
   return (
     <div ref={backdropRef} className="fixed inset-0 z-50 min-h-screen bg-black/80 flex justify-center items-center">
