@@ -122,7 +122,7 @@ const EnquiryModal = ({ onClose }) => {
       <div ref={modalRef} className="bg-white rounded-3xl shadow-2xl flex flex-col md:flex-row w-full max-w-5xl overflow-hidden">
         {/* Left Image */}
         <div className="md:w-1/2 hidden md:block">
-          <img src="/gallery/e-house.jpg" alt="Luxury" className="w-full h-full object-cover" />
+          <img src="/gallery/login.jpg" alt="Luxury" className="w-full h-full object-cover" />
         </div>
 
         {/* Right Form */}
