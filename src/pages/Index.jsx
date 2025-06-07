@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App.jsx";
 import Home from "./Home.jsx";
 import NotFound from "./NotFound.jsx";
-import EnquiryForm from "../Components/loginMOdel.jsx";
+import EnquiryForm from "../Components/loginModel.jsx";
 import AllPropertypage from "./AllPropertypage.jsx";
 
 

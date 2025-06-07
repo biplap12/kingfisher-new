@@ -66,7 +66,7 @@ const IconicProperties = () => {
         Kingfisher is celebrated for creating refined residential towers, vibrant master-planned communities, and exclusive coastal retreats. From contemporary apartments in dynamic cityscapes to serene, luxury island residences, each property is a fusion of architectural excellence, modern innovation, and premium lifestyle amenities — offering residents an extraordinary place to call home.
       </p>
 
-      <div to={"/all-property-page"} className="flex justify-center gap-6">
+      <div className="flex justify-center gap-6">
         {properties.map((property, index) => (
           <div
             key={index}
