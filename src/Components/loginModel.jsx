@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Select from 'react-select';
 import gsap from 'gsap';
 import countriesData from 'world-countries';
+import { Link } from 'react-router-dom';
 
 const countries = countriesData.map((country) => ({
   name: country.name.common,
@@ -126,7 +127,8 @@ const EnquiryModal = ({ onClose }) => {
 
         {/* Right Form */}
         <div className="w-full md:w-1/2 p-10 relative bg-gradient-to-bl from-white to-gray-50">
-          <button onClick={handleClose} className="absolute top-5 right-5 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
+          {/* <button onClick={handleClose} className="absolute top-5 right-5 text-gray-400 hover:text-gray-700 text-2xl">&times;</button> */}
+          <Link to={"/"} className="absolute top-5 right-5 text-gray-400 hover:text-gray-700 text-2xl">&times;</Link>
 
           <h2 className="text-4xl font-['Playfair_Display'] font-bold text-[#1E2C3A] text-center mb-2 tracking-wide">
             Luxury Living Awaits
@@ -195,7 +197,7 @@ const EnquiryModal = ({ onClose }) => {
               type="submit"
               className="w-full bg-[#1E2C3A] text-white text-lg font-semibold py-3 rounded-xl hover:bg-[#2A3A4A] transition tracking-wide shadow-md"
             >
-              Request Consultation
+              Send
             </button>
           </form>
         </div>

@@ -21,7 +21,7 @@ export default function Sidebar() {
     };
   }, [isOpen]);
   return (
-    <div className="sticky top-0 left-0 w-full z-60 bg-transparent">
+    <div className="sticky top-0 left-0 w-full z-60 bg-transparent shadow-xs">
       <div className="flex items-center justify-between px-6 py-5">
         {/* Left: Hamburger + Language */}
         <div className="flex items-center gap-8">
@@ -32,19 +32,19 @@ export default function Sidebar() {
           >
             {/* Top Line */}
             <span
-              className={`absolute h-0.5 w-12 bg-white transform transition-all duration-300 ease-in-out ${
+              className={`absolute h-0.5 w-12 bg-[#F5BC6D] transform transition-all duration-300 ease-in-out ${
                 isOpen ? "rotate-45 top-5" : "top-2"
               }`}
             />
             {/* Middle Line */}
             <span
-              className={`absolute h-0.5 w-8 bg-white transition-all duration-300 ease-in-out ${
+              className={`absolute h-0.5 w-8 bg-[#F5BC6D] transition-all duration-300 ease-in-out ${
                 isOpen ? "opacity-0" : "top-5"
               }`}
             />
             {/* Bottom Line */}
             <span
-              className={`absolute h-0.5 w-12 bg-white transform transition-all duration-300 ease-in-out ${
+              className={`absolute h-0.5 w-12 bg-[#F5BC6D] transform transition-all duration-300 ease-in-out ${
                 isOpen ? "-rotate-45 top-5" : "top-8"
               }`}
             />
@@ -64,7 +64,7 @@ export default function Sidebar() {
         </div>
 
         {/* Center: Logo */}
-        <Link to={'/'} className="flex justify-center flex-1">
+        <Link to={'/'} className="flex justify-center items-center ml-35 flex-1">
           <img src="/logo/logo1.png" alt="logo" className="h-12 object-contain" />
         </Link>
 
@@ -73,15 +73,15 @@ export default function Sidebar() {
           <span className={`font-semibold ${isOpen ? "text-black" : "text-white"}`}>
             +1 (234) 567-8901
           </span>
-          <button
-            className={`px-4 py-2 rounded transition ${
+          <Link to={'/enquiry'}
+            className={`px-4 py-2 rounded transition cursor-pointer ${
               isOpen
                 ? "bg-[#232266] text-white hover:black"
                 : "bg-[#F5BC6D] text-[#232266] hover:black"
             }`}
           >
-            See Property
-          </button>
+            Enquiry Now
+          </Link>
         </div>
       </div>
 

@@ -4,12 +4,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const amenities = [
   { title: "CLUB HOUSE", img: "/new/6.jpg" },
-  { title: "STATE-OF-THE ART GYM", img: "/new/7.jpg" },
+  { title: "STATE-OF-THE ART GYM", img: "/new/2.jpg" },
   { title: "CONTEMPORARY WORKING SPACES", img: "/new/1.jpg" },
-  { title: "EV CHARGING STATIONS", img: "/new/2.jpg" },
-  { title: "STATE-OF-THE ART GYM", img: "/new/7.jpg" },
-  { title: "CONTEMPORARY WORKING SPACES", img: "/new/1.jpg" },
-  { title: "EV CHARGING STATIONS", img: "/new/2.jpg" },
+  { title: "EV CHARGING STATIONS", img: "/new/4.jpg" },
+  { title: "STATE-OF-THE ART GYM", img: "/new/3.jpg" },
+  { title: "CONTEMPORARY WORKING SPACES", img: "/new/8.jpg" },
+  { title: "EV CHARGING STATIONS", img: "/new/7.jpg" },
 ];
 
 const AmenitiesSection = () => {
