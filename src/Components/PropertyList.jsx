@@ -113,8 +113,8 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { properties } from "../data/properties";
-import FilterSidebar from "../components/FilterSidebar";
-import PropertyCard from "../components/PropertyCard";
+import FilterSidebar from "../Components/FilterSidebar";
+import PropertyCard from "../Components/PropertyCard";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Pagination from "./Pagination";
