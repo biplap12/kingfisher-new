@@ -1,81 +1,92 @@
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
-import EnquiryModal from '../loginModel'; // Make sure this is the correct path
 
-const Navbar = () => {
-  const [isHovered, setIsHovered] = useState(false);
+import { useEffect, useState } from "react";
+import ToggleSidebar from "./toggleSidebar.jsx";
+import { Link } from "react-router-dom";
+
+export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [language, setLanguage] = useState("EN");
 
-  const openModalBox = () => {
-    setIsOpen(true);
+  const toggleSidebar = () => setIsOpen((prev) => !prev);
+  const closeSidebar = () => setIsOpen(false);
+
+  const toggleLanguage = () => {
+    setLanguage((prev) => (prev === "EN" ? "AR" : "EN"));
   };
 
-  const closeModalBox = () => {
-    setIsOpen(false);
-  };
-
+   useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto"; 
+    };
+  }, [isOpen]);
   return (
-    <div className="sticky top-0 z-50 w-full py-6 px-8 text-white backdrop-blur-md">
-      <div className="flex justify-between items-center">
-        {/* Left Placeholder */}
-        <div className="w-[180px]"></div>
-
-        {/* Center Logo */}
-        <div className="absolute left-1/2 transform -translate-x-1/2">
-          <img src="/logo/logo1.png" alt="Logo" className="h-10 object-contain" />
-        </div>
-
-        {/* Right Side */}
-        <div className="flex items-center gap-6 w-[180px] justify-end">
-          {/* Language Dropdown */}
+    <div className="sticky top-0 left-0 w-full z-60 bg-transparent">
+      <div className="flex items-center justify-between px-6 py-5">
+        {/* Left: Hamburger + Language */}
+        <div className="flex items-center gap-8">
+          {/* Hamburger */}
           <div
-            className="relative cursor-pointer"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            className="w-12 h-10 relative flex flex-col justify-center cursor-pointer z-[60]"
+            onClick={toggleSidebar}
           >
-            <div className="flex items-center gap-1 uppercase text-sm tracking-wider">
-              EN
-              {isHovered ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-            </div>
-
-            <AnimatePresence>
-              {isHovered && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute right-0 mt-2 bg-white text-black rounded-md shadow-lg w-32 z-10"
-                >
-                  <ul className="py-2 text-sm">
-                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center gap-2">
-                      🇺🇸 <span>EN</span>
-                    </li>
-                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center gap-2">
-                      🇮🇳 <span>HI</span>
-                    </li>
-                  </ul>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            {/* Top Line */}
+            <span
+              className={`absolute h-0.5 w-12 bg-white transform transition-all duration-300 ease-in-out ${
+                isOpen ? "rotate-45 top-5" : "top-2"
+              }`}
+            />
+            {/* Middle Line */}
+            <span
+              className={`absolute h-0.5 w-8 bg-white transition-all duration-300 ease-in-out ${
+                isOpen ? "opacity-0" : "top-5"
+              }`}
+            />
+            {/* Bottom Line */}
+            <span
+              className={`absolute h-0.5 w-12 bg-white transform transition-all duration-300 ease-in-out ${
+                isOpen ? "-rotate-45 top-5" : "top-8"
+              }`}
+            />
           </div>
 
-          {/* Enquiry Button */}
-          <button
-            className="px-4 py-2 bg-white text-black text-sm font-medium rounded-sm hover:bg-gray-100 transition whitespace-nowrap"
-            onClick={openModalBox}
+          {/* Dynamic Language Switcher */}
+          <div
+            onClick={toggleLanguage}
+            className={`flex items-center gap-2 font-semibold cursor-pointer ${
+              isOpen ? "text-black" : "text-white"
+            }`}
           >
-            ENQUIRY
+            <span>{language}</span>
+            <span>/</span>
+            <span>{language === "EN" ? "AR" : "EN"}</span>
+          </div>
+        </div>
+
+        {/* Center: Logo */}
+        <Link to={'/'} className="flex justify-center flex-1">
+          <img src="/logo/logo1.png" alt="logo" className="h-12 object-contain" />
+        </Link>
+
+        {/* Right: Contact + Button */}
+        <div className="flex items-center gap-5">
+          <span className={`font-semibold ${isOpen ? "text-black" : "text-white"}`}>
+            +1 (234) 567-8901
+          </span>
+          <button
+            className={`px-4 py-2 rounded transition ${
+              isOpen
+                ? "bg-[#232266] text-white hover:black"
+                : "bg-[#F5BC6D] text-[#232266] hover:black"
+            }`}
+          >
+            See Property
           </button>
         </div>
       </div>
 
-      {/* Enquiry Modal */}
-      {isOpen && <EnquiryModal onClose={closeModalBox} />}
+      {/* Sidebar Modal */}
+      {isOpen && <ToggleSidebar onClose={closeSidebar} />}
     </div>
   );
-};
-
-export default Navbar;
+}
