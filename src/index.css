@@ -22,3 +22,10 @@
 html {
   scroll-behavior: smooth;
 }
+
+.primary-color {
+  color: #F5BC6D;
+}
+.secondary-color {
+  color: blue;
+}

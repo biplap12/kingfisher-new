@@ -1,14 +1,16 @@
 
-import Hero1 from '../components/Hero1.jsx'
-import Hero2 from '../components/Hero2.jsx'
-import Hero4 from '../Components/Hero4.jsx'
-import MapSection from '../Components/MapSection.jsx';
-import PaymentPlanSection from '../Components/PaymentPlanSection.jsx';
-import FloorPlanSelector from '../Components/FloorPlanSelector.jsx';
-import IconicProperties from '../Components/IconicProperties.jsx';
-import Whykingfisher from '../Components/WhyKingFisher.jsx';
-import AmenitiesSection from '../Components/Hero5.jsx';
-import Gallery from '../Components/Gallery.jsx';
+
+import MapSection from '../Components/Home/MapSection.jsx';
+import PaymentPlanSection from '../Components/Home/PaymentPlanSection.jsx';
+import FloorPlanSelector from '../Components/Home/FloorPlanSelector.jsx';
+import IconicProperties from '../Components/Home/IconicProperties.jsx';
+import Whykingfisher from '../Components/Home/WhyKingFisher.jsx';
+import AmenitiesSection from '../Components/Home/AmenitiesSection.jsx';
+import Gallery from '../Components/Home/Gallery.jsx';
+import Hero1 from '../Components/Home/hero1.jsx';
+import Hero2 from '../Components/Home/hero2.jsx';
+import Hero4 from '../Components/Home/Hero4.jsx';
+import PartnerLogos from '../Components/Partners/Associated-Partners.jsx';
 
 
 const Home = () => {
@@ -26,6 +28,7 @@ const Home = () => {
     <MapSection/>
     <PaymentPlanSection/>
     <FloorPlanSelector/>
+    <PartnerLogos/>
     </div>
         
     </>

@@ -2,25 +2,29 @@ import React, { useState } from "react";
 
 export const floorPlans = [
   {
-    label: "1 Bedroom",
+    id: 1,
+    label: "Queen Bedroom",
     unit: "94",
     sqrft: "785 sq ft — 1022 sq ft",
     image: "/new/bed1.jpg",
   },
   {
-    label: "2 Bedroom",
+    id: 2,
+    label: "King Bedroom",
     unit: "76",
     sqrft: "1102 sq ft — 1375 sq ft",
     image: "/new/bed2.jpg",
   },
   {
-    label: "3 Bedroom",
+    id: 3,
+    label: "Double Bedroom",
     unit: "38",
     sqrft: "1450 sq ft — 1620 sq ft",
     image: "/new/bed3.jpg",
   },
   {
-    label: "3 Bedroom Duplex",
+    id: 4,
+    label: "Bedroom Duplex",
     unit: "12",
     sqrft: "1810 sq ft — 2000 sq ft",
     image: "/new/bed4.jpg",
@@ -45,7 +49,14 @@ const FloorPlanSelector = () => {
                 onClick={() => setSelected(plan)}
                 className="text-left w-full  tracking-wider transition-all text-gray-700 hover:text-black text-2xl"
               >
-                {plan.label.toUpperCase()}
+                <div className={`flex items-center gap-3 p-2 rounded-lg ${
+                  selected.label === plan.label
+                    ? "bg-yellow-500 text-white"
+                    : "bg-white border border-gray-300 hover:bg-gray-100"
+                    }`}>
+                  <span>{plan.id}</span>
+                  <span>{plan.label.toUpperCase()}</span>
+                </div>
               </button>
 
               {/* Details only for selected */}
@@ -53,7 +64,7 @@ const FloorPlanSelector = () => {
                 <>
                   <div className="mt-2 text-sm text-gray-600 mb-2 flex justify-between">
                     <p className="mb-1">
-                      UNITS: <span className="font-medium">{plan.unit}</span>
+                      units- <span className="font-medium">{plan.unit}</span>
                     </p>
                     <p className="text-xs">{plan.sqrft}</p>
                   </div>
@@ -78,11 +89,11 @@ const FloorPlanSelector = () => {
         </div>
 
         {/* Image Preview */}
-        <div className="flex-1 w-full flex items-center justify-center bg-white p-6 shadow-md rounded-md">
+        <div className="flex-1 w-full flex items-center justify-center bg-white ">
           <img
             src={selected.image}
             alt={selected.label}
-            className="max-w-full max-h-[600px] object-contain"
+            className="max-w-full max-h-[600px] h-[80vh] object-fill w-full"
           />
         </div>
       </div>

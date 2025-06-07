@@ -10,22 +10,22 @@ const stats = [
   {
     value: "48,000+",
     label: "Homes Successfully Delivered",
-    icon: <Home size={36} className="text-green-700" />,
+    icon: <Home size={36} className="primary-color" />,
   },
   {
     value: "50,100+",
     label: "Units Under Development",
-    icon: <Wrench size={36} className="text-green-700" />,
+    icon: <Wrench size={36} className="primary-color" />,
   },
   {
     value: "100+",
     label: "Global Industry Awards",
-    icon: <Award size={36} className="text-green-700" />,
+    icon: <Award size={36} className="primary-color" />,
   },
   {
     value: "7",
     label: "Countries with Active Projects",
-    icon: <Globe size={36} className="text-green-700" />,
+    icon: <Globe size={36} className="primary-color" />,
   },
 ];
 
@@ -33,7 +33,7 @@ const Whykingfisher = () => {
   return (
     <section className="bg-[#f9f9f9] py-20 px-4">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-00">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 primary-color tracking-wide uppercase">
           WHY CHOOSE KINGFISHER ?
         </h2>
         <p className="text-lg text-gray-00 max-w-3xl mx-auto mb-14">

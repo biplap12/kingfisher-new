@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import EnquiryModal from './loginMOdel'; // Make sure this is the correct path
+import EnquiryModal from '../loginMOdel'; // Make sure this is the correct path
 
 const Navbar = () => {
   const [isHovered, setIsHovered] = useState(false);
